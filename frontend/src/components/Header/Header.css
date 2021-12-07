@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marmelad&display=swap");
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  text-align: center;
+  border-radius: 70%/90%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: #000;
+  color: #fff;
+}
+.header .header-top {
+  height: 10%;
+}
+.header .header-bottom {
+  font-size: 2em;
+  height: 90%;
+}
+.header .header-bottom .header-link {
+  width: 100%;
+  height: 100%;
+  padding: 0.75em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .header-bottom .header-link img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+@media (max-width: 767px) {
+  .header {
+    height: 10vh;
+    margin-left: -1em;
+    margin-right: -1em;
+    border-bottom-left-radius: 0;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .header .header-bottom .header-link {
+    padding: 0.25em;
+  }
+}

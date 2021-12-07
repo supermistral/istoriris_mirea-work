@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marmelad&display=swap");
+.about .post-title {
+  font-size: 3.2em;
+  font-weight: 600;
+  text-decoration: underline;
+  margin: 0;
+  border: 0;
+  padding: 0 0.25em 0.5em;
+}
+.about .post-container {
+  background-color: unset;
+}
+.about .post-content {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.about .image {
+  max-height: 400px !important;
+}

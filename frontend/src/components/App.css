@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marmelad&display=swap");
+#wrapper {
+  min-width: 100%;
+  background-size: 300px 300px;
+  background-repeat: repeat;
+}
+
+#content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
+  background-color: #c27466;
+  position: relative;
+  box-shadow: 1px 0 50px 20px rgba(0, 0, 0, 0.5), -1px 0 50px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}

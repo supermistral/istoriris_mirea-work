@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marmelad&display=swap");
+.page-settings {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 0 !important;
+  height: 100%;
+  z-index: 100;
+  cursor: pointer;
+  color: #fff;
+}
+.page-settings input[type=checkbox] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  cursor: pointer;
+}
+.page-settings label {
+  display: block;
+}
+.page-settings .page-settings-content {
+  height: 100%;
+}
+.page-settings .page-settings-content .page-settings-input {
+  position: relative;
+  z-index: 0;
+  width: 1.5em;
+  height: 100%;
+}
+.page-settings .page-settings-content .page-settings-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: -1;
+}
+.page-settings .page-settings-content .page-settings-icon .icon-wrapper {
+  position: relative;
+  height: 1em;
+}
+.page-settings .page-settings-content .page-settings-icon .icon-wrapper::before, .page-settings .page-settings-content .page-settings-icon .icon-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0.4em;
+  width: 0.2em;
+  height: 10em;
+  background-color: #aaa;
+}
+.page-settings .page-settings-content .page-settings-icon .icon-wrapper::before {
+  bottom: 150%;
+}
+.page-settings .page-settings-content .page-settings-icon .icon-wrapper::after {
+  top: 150%;
+}
+.page-settings .page-settings-content .page-settings-input:focus + .page-settings-list,
+.page-settings .page-settings-content .page-settings-list:hover, .page-settings .page-settings-content:focus-within .page-settings-list {
+  transition-delay: 0s;
+  visibility: visible;
+  transform: translateX(0);
+}
+.page-settings .page-settings-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 0 1.5em;
+  background-color: #282828;
+  box-shadow: 0 0 10px #000;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 0.3s ease-in-out, visibility 0s ease-in-out 0.3s;
+  overflow-y: auto;
+}
+.page-settings .page-settings-list .settings-header {
+  position: relative;
+  text-align: center;
+  padding: 1em 0;
+  font-size: 1.3em;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid #aaa;
+}
+.page-settings .page-settings-list .settings-header .settings-header-close {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  transform: translateY(-50%);
+  font-size: 1.25em;
+  line-height: 1;
+}
+.page-settings .page-settings-list .settings-header .settings-header-close svg {
+  display: block;
+}
+.page-settings .page-settings-list .page-settings-item {
+  padding: 0.5em;
+}
+.page-settings .page-settings-list .settings-sections {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.page-settings .page-settings-list .settings-sections .settings-item {
+  margin-left: 0.5em;
+  border-left: 2px solid orange;
+  width: 100%;
+}
+.page-settings .page-settings-list .settings-sections .settings-item > * {
+  padding: 0.35em 0;
+  padding-left: 0.5em;
+}
+.page-settings .page-settings-list .settings-sections .settings-item:hover .choose .icon {
+  box-shadow: inset 0 0 0 #282828;
+}
+.page-settings .page-settings-list .settings-sections > * {
+  position: relative;
+  margin: 0.5em 0;
+}
+.page-settings .page-settings-list .settings-sections > * .settings-item-header {
+  padding: 0.5em 0;
+  font-size: 1.2em;
+}
+.page-settings .page-settings-list .settings-sections > *::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  height: 100%;
+  width: 10px;
+  border-bottom: 2px solid orange;
+}
+.page-settings .page-settings-list > * {
+  white-space: nowrap;
+  padding: 0.5em 0;
+}
+.page-settings .page-settings-list .switch {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1em;
+}
+.page-settings .page-settings-list .switch .switch-panel {
+  margin-right: 0.25em;
+}
+.page-settings .page-settings-list .switch .switch-content {
+  display: flex;
+  cursor: pointer;
+}
+.page-settings .page-settings-list .switch .switch-content > * {
+  margin: 0 0.25em;
+}
+.page-settings .page-settings-list .switch .switch-content .switch-option {
+  height: 1em;
+}
+.page-settings .page-settings-list .switch .switch-content .switch-slider {
+  position: relative;
+  background-color: #eee;
+  width: 2em;
+  border: 1px solid #fff;
+  border-radius: 0.5em;
+  transition: background-color 0.2s ease-out;
+}
+.page-settings .page-settings-list .switch .switch-content .switch-slider .switch-slider-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(1em - 2px);
+  width: calc(1em - 2px);
+  border-radius: 50%;
+  background-color: #c58815;
+  transition: left 0.2s ease-out, background-color 0.2s ease-out;
+}
+.page-settings .page-settings-list .switch .switch-content input:checked ~ .switch-option:last-child .switch-slider-indicator {
+  background-color: #eee;
+  left: 1em;
+}
+.page-settings .page-settings-list .switch .switch-content input:checked ~ .switch-slider {
+  background-color: #c58815;
+}
+.page-settings .page-settings-list .switch .switch-content input:checked ~ .switch-slider .switch-slider-indicator {
+  background-color: #eee;
+  left: 1em;
+}
+.page-settings .page-settings-list .choose {
+  cursor: pointer;
+}
+.page-settings .page-settings-list .choose input {
+  position: absolute;
+  z-index: -1;
+}
+.page-settings .page-settings-list .choose input:focus + .choose-list, .page-settings .page-settings-list .choose .choose-list:hover {
+  transition-delay: 0s;
+}
+@keyframes chooseListFadeIn {
+  from {
+    transform: rotateY(90deg) skewY(0);
+    visibility: hidden;
+  }
+  to {
+    transform: rotateY(0) skewY(-10deg);
+    visibility: visible;
+  }
+}
+.page-settings .page-settings-list .choose .choose-panel {
+  display: flex;
+  line-height: 1em;
+}
+.page-settings .page-settings-list .choose .choose-panel .icon {
+  border-radius: 50%;
+  margin-left: 0.25em;
+  box-shadow: inset 0 0 1em #282828;
+  background-color: orange;
+  transition: box-shadow 0.2s ease-in;
+  width: 1em;
+}
+.page-settings .page-settings-list .choose .choose-panel .icon svg {
+  display: block;
+}
+.page-settings .page-settings-list .choose .choose-list {
+  margin: 0.5em 0 0;
+  top: 0;
+  left: calc(100% + 1.5em);
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #424242;
+  transition: max-height 0.3s ease-out;
+  font-size: 0.9em;
+}
+.page-settings .page-settings-list .choose .choose-list > * {
+  padding: 0.5em 1em;
+  white-space: nowrap;
+  text-align: left;
+  border-bottom: 1px solid #666;
+  position: relative;
+}
+.page-settings .page-settings-list .choose .choose-list > *::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: orange;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: left 0.1s ease-out;
+}
+.page-settings .page-settings-list .choose .choose-list > *:last-child {
+  border-bottom: 0;
+}
+.page-settings .page-settings-list .choose .choose-list > *:hover::before {
+  left: 5px;
+}
+@media screen and (max-width: 767px) {
+  .page-settings .page-settings-list {
+    padding: 0 1em;
+  }
+}
